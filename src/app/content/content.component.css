@@ -1,0 +1,26 @@
+
+
+.loginplate{
+    /* background-color:white;  */
+    padding: 20px;
+    border-width: 50px;
+    border-style: hidden;
+    /* color: #41414B; */
+    /* color: black; */
+    color: white;
+    font-size: 20px;
+}
+
+.form-label{   
+    color: white;
+}
+
+
+.input_box{
+    color: white;
+}
+/* .form_username{
+    background-color: white;
+    color: black;
+    font-size: 15px;
+} */

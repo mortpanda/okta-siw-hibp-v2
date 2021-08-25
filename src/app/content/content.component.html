@@ -1,9 +1,11 @@
 
-    <div class="container" fxLayout="row">
+    <div class="container" fxLayout="row" fxLayoutAlign="space-between">
     <div class="item item1">
         <!-- <h1 id="login">Login</h1> -->
-        <p><img src="https://cdn.brandfolder.io/2VK5Y09C/at/5hf5mqw3gjt7k9jh9ss875b/Logo_Customer-Success_45x250.png?height=54&width=300" alt="Okta Customer Success"  class="responsive"> 
-        </p>
+        
+        <a class="navbar-brand" href="https://www.okta.com/services/success-and-support/" target="_blank">
+        <img src="https://cdn.brandfolder.io/2VK5Y09C/at/5hf5mqw3gjt7k9jh9ss875b/Logo_Customer-Success_45x250.png?height=54&width=300" alt="Okta Customer Success"  class="cs_image"> 
+        </a>
         <form [formGroup]="loginform" (ngSubmit)="onSubmit()" id="loginpage" class="loginplate">
             <p *ngIf="loginInvalid" class="text-danger">
                 <!-- The username and password were not recognized -->
@@ -29,13 +31,9 @@
                 
         </form>
     </div>
-    <div class="item item2">2</div>
-    <div class="item item3">3</div>
-    <div class="item item4">4</div>
-    <div class="item item5">5</div>
-    <div class="item item5">6</div>
-    <div class="item item5">7</div>
-    <div class="item item5">8</div>
-    <div class="item item5">9</div>
-    <div class="item item5">10</div>
+    <div id="console" class="console">
+        sss
+    </div>
+
+    
   </div>

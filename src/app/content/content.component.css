@@ -2,6 +2,7 @@
 
 .loginplate{
     /* background-color:white;  */
+    z-index: 9999;
     padding: 20px;
     border-width: 50px;
     border-style: hidden;
@@ -24,3 +25,321 @@
     color: black;
     font-size: 15px;
 } */
+.cs_image{
+    z-index: 9999;
+}
+
+.console {
+    z-index: 9999;
+    position: relative;
+    width: 100%;
+    height: 600px;
+    max-width: 600px;
+    border-radius: 6px;
+    padding-top: 20px;
+    margin-top: 8px;
+    overflow: hidden;
+    background-color: rgb(15, 15, 16);
+    color: white;
+    overflow-y: scroll;   
+    word-break:break-word;
+    font-size: 12px; 
+}
+  .console::before {
+    z-index: 9999;
+    content: "\2022 \2022 \2022";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: rgb(58, 58, 58);
+    color: #c2c3c4;
+    width: 100%;
+    font-size: 2rem;
+    line-height: 0;
+    padding: 14px 0;
+    text-indent: 4px;
+    /* overflow-y: scroll; */
+}
+
+  .console pre {
+    z-index: 9999;
+    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+    color: white;
+    padding: 0 1rem 1rem;
+    margin: 0;
+    overflow-y: scroll;
+}
+
+.mat-form-field-label {
+    color: white;
+}
+
+.mat-hint {
+    color: white;
+}
+
+.mat-form-field.mat-focused .mat-form-field-label {
+    color: white;
+}
+
+.mat-form-field.mat-focused .mat-form-field-label.mat-accent {
+    color: white;
+}
+
+.mat-form-field.mat-focused .mat-form-field-label.mat-warn {
+    color: white;
+}
+
+.mat-focused .mat-form-field-required-marker {
+    color: white;
+}
+
+.mat-form-field-ripple {
+    background-color: #fff
+}
+
+/* .mat-form-field.mat-focused .mat-form-field-ripple {
+    background-color: white;
+} */
+
+.mat-form-field.mat-focused .mat-form-field-ripple.mat-accent {
+    background-color: white;
+}
+
+.mat-form-field.mat-focused .mat-form-field-ripple.mat-warn {
+    background-color: white
+}
+
+.mat-form-field-type-mat-native-select.mat-focused:not(.mat-form-field-invalid) .mat-form-field-infix::after {
+    color: white;
+}
+
+.mat-form-field-type-mat-native-select.mat-focused:not(.mat-form-field-invalid).mat-accent .mat-form-field-infix::after {
+    color: white;
+}
+
+.mat-form-field-type-mat-native-select.mat-focused:not(.mat-form-field-invalid).mat-warn .mat-form-field-infix::after {
+    color: white;
+}
+
+.mat-form-field.mat-form-field-invalid .mat-form-field-label {
+    color: white;
+}
+
+.mat-form-field.mat-form-field-invalid .mat-form-field-label.mat-accent, .mat-form-field.mat-form-field-invalid .mat-form-field-label .mat-form-field-required-marker {
+    color: white;
+}
+
+/* .mat-form-field.mat-form-field-invalid .mat-form-field-ripple, .mat-form-field.mat-form-field-invalid .mat-form-field-ripple.mat-accent {
+    background-color: #f44336
+} */
+.mat-form-field-appearance-legacy .mat-form-field-label {
+    color: white;
+}
+
+.mat-form-field-appearance-legacy .mat-hint {
+    color: white;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-underline {
+    background-color: rgba(255, 255, 255, .7)
+}
+
+.mat-form-field-appearance-legacy.mat-form-field-disabled .mat-form-field-underline {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.7) 33%, transparent 0%);
+    background-size: 4px 100%;
+    background-repeat: repeat-x
+}
+
+.mat-form-field-appearance-standard .mat-form-field-underline {
+    background-color: rgba(255, 255, 255, .7)
+}
+
+.mat-form-field-appearance-standard.mat-form-field-disabled .mat-form-field-underline {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.7) 33%, transparent 0%);
+    background-size: 4px 100%;
+    background-repeat: repeat-x
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: rgba(255, 255, 255, .1)
+}
+
+.mat-form-field-appearance-fill.mat-form-field-disabled .mat-form-field-flex {
+    background-color: rgba(255, 255, 255, .05)
+}
+
+.mat-form-field-appearance-fill .mat-form-field-underline::before {
+    background-color: rgba(255, 255, 255, .5)
+}
+
+.mat-form-field-appearance-fill.mat-form-field-disabled .mat-form-field-label {
+    color: rgba(255, 255, 255, .5)
+}
+
+.mat-form-field-appearance-fill.mat-form-field-disabled .mat-form-field-underline::before {
+    background-color: transparent
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: rgba(255, 255, 255, .3)
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline-thick {
+    color: #fff
+}
+
+.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: #7b1fa2
+}
+
+.mat-form-field-appearance-outline.mat-focused.mat-accent .mat-form-field-outline-thick {
+    color: #69f0ae
+}
+
+.mat-form-field-appearance-outline.mat-focused.mat-warn .mat-form-field-outline-thick {
+    color: #f44336
+}
+
+.mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick {
+    color: #f44336
+}
+
+.mat-form-field-appearance-outline.mat-form-field-disabled .mat-form-field-label {
+    color: rgba(255, 255, 255, .5)
+}
+
+.mat-form-field-appearance-outline.mat-form-field-disabled .mat-form-field-outline {
+    color: rgba(255, 255, 255, .15)
+}
+
+.mat-form-field-type-mat-native-select .mat-form-field-infix::after {
+    color: rgba(255, 255, 255, .7)
+}
+
+.mat-input-element:disabled, .mat-form-field-type-mat-native-select.mat-form-field-disabled .mat-form-field-infix::after {
+    color: rgba(255, 255, 255, .5)
+}
+
+.mat-input-element {
+    caret-color: #7b1fa2
+}
+
+.mat-input-element::placeholder {
+    color: rgba(255, 255, 255, .5)
+}
+
+.mat-input-element::-moz-placeholder {
+    color: rgba(255, 255, 255, .5)
+}
+
+.mat-input-element::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, .5)
+}
+
+.mat-input-element:-ms-input-placeholder {
+    color: rgba(255, 255, 255, .5)
+}
+
+.mat-input-element option {
+    color: rgba(0, 0, 0, .87)
+}
+
+.mat-input-element option:disabled {
+    color: rgba(0, 0, 0, .38)
+}
+
+.mat-form-field.mat-accent .mat-input-element {
+    caret-color: #69f0ae
+}
+
+.mat-form-field.mat-warn .mat-input-element, .mat-form-field-invalid .mat-input-element {
+    caret-color: #f44336
+}
+
+.mat-form-field-type-mat-native-select.mat-form-field-invalid .mat-form-field-infix::after {
+    color: #f44336
+}
+
+.mat-list-base .mat-list-item {
+    color: #fff
+}
+
+.mat-list-base .mat-list-option {
+    color: #fff
+}
+
+.mat-list-base .mat-subheader {
+    color: rgba(255, 255, 255, .7)
+}
+
+.mat-list-item-disabled {
+    background-color: #000
+}
+
+.mat-list-option:hover, .mat-list-option:focus, .mat-nav-list .mat-list-item:hover, .mat-nav-list .mat-list-item:focus, .mat-action-list .mat-list-item:hover, .mat-action-list .mat-list-item:focus {
+    background: rgba(255, 255, 255, .04)
+}
+
+.mat-list-single-selected-option, .mat-list-single-selected-option:hover, .mat-list-single-selected-option:focus {
+    background: rgba(255, 255, 255, .12)
+}
+
+.mat-menu-panel {
+    background: #424242
+}
+
+.mat-menu-panel:not([class*=mat-elevation-z]) {
+    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)
+}
+
+.mat-menu-item {
+    background: transparent;
+    color: #fff
+}
+
+.mat-menu-item[disabled], .mat-menu-item[disabled]::after, .mat-menu-item[disabled] .mat-icon-no-color {
+    color: rgba(255, 255, 255, .5)
+}
+
+.mat-menu-item .mat-icon-no-color, .mat-menu-item-submenu-trigger::after {
+    color: #fff
+}
+
+.mat-menu-item:hover:not([disabled]), .mat-menu-item.cdk-program-focused:not([disabled]), .mat-menu-item.cdk-keyboard-focused:not([disabled]), .mat-menu-item-highlighted:not([disabled]) {
+    background: rgba(255, 255, 255, .04)
+}
+
+.mat-paginator {
+    background: #424242
+}
+
+.mat-paginator, .mat-paginator-page-size .mat-select-trigger {
+    color: rgba(255, 255, 255, .7)
+}
+
+.mat-paginator-decrement, .mat-paginator-increment {
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff
+}
+
+.mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+    color: #7b1fa2
+}
+
+.mat-form-field.mat-focused.mat-accent .mat-select-arrow {
+    color: #69f0ae
+}
+
+.mat-form-field.mat-focused.mat-warn .mat-select-arrow {
+    color: #f44336
+}
+
+.mat-form-field .mat-select.mat-select-invalid .mat-select-arrow {
+    color: #f44336
+}
+
+.mat-form-field .mat-select.mat-select-disabled .mat-select-arrow {
+    color: rgba(255, 255, 255, .5)
+}

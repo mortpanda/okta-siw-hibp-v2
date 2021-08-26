@@ -30,6 +30,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field'; 
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
+
 //
 
 import { SdkLoginComponent } from './sdk-login/sdk-login.component';
@@ -47,7 +48,7 @@ import { ContentComponent } from './content/content.component';
 
 import { LandingComponent } from './examples/landing/landing.component';
 import { HomeComponent } from './home/home.component';
-
+import {A11yModule} from '@angular/cdk/a11y'; 
 
 
 
@@ -61,7 +62,8 @@ import { HomeComponent } from './home/home.component';
     RegisterModalComponent,
     ContentComponent,
     LandingComponent,
-    HomeComponent
+    HomeComponent,
+    
     
     
   ],
@@ -95,6 +97,7 @@ import { HomeComponent } from './home/home.component';
     CommonModule,
     FlexLayoutModule,
     
+    A11yModule,
     
 
   ],

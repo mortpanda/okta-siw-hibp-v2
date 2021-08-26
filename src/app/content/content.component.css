@@ -1,4 +1,7 @@
 
+.btn btn-primary mt-4 mb-3 {
+    width: 200px !important;
+}
 
 .loginplate{
     /* background-color:white;  */
@@ -9,7 +12,7 @@
     /* color: #41414B; */
     /* color: black; */
     color: white;
-    font-size: 20px;
+    font-size: 12px;
 }
 
 .form-label{   
@@ -36,7 +39,7 @@
     height: 600px;
     max-width: 600px;
     border-radius: 6px;
-    padding-top: 20px;
+    padding-top: 30px;
     margin-top: 8px;
     overflow: hidden;
     background-color: rgb(15, 15, 16);
@@ -72,7 +75,18 @@
 }
 
 .mat-form-field-label {
-    color: white;
+    color: #6E6E78;
+}
+
+/* input.mat-input-element{
+    background-color: #6E6E78;
+ } */
+
+ .mat-form-field {
+    background-color: #6E6E78;
+    border-radius: 10px;
+    padding: 5px;
+    width: 300px;
 }
 
 .mat-hint {
@@ -143,7 +157,7 @@
 }
 
 .mat-form-field-appearance-legacy .mat-form-field-underline {
-    background-color: rgba(255, 255, 255, .7)
+    background-color: white
 }
 
 .mat-form-field-appearance-legacy.mat-form-field-disabled .mat-form-field-underline {
@@ -227,23 +241,23 @@
 }
 
 .mat-input-element::placeholder {
-    color: rgba(255, 255, 255, .5)
+    color: white
 }
 
 .mat-input-element::-moz-placeholder {
-    color: rgba(255, 255, 255, .5)
+    color: white
 }
 
 .mat-input-element::-webkit-input-placeholder {
-    color: rgba(255, 255, 255, .5)
+    color: white
 }
 
 .mat-input-element:-ms-input-placeholder {
-    color: rgba(255, 255, 255, .5)
+    color: white
 }
 
 .mat-input-element option {
-    color: rgba(0, 0, 0, .87)
+    color: white
 }
 
 .mat-input-element option:disabled {
@@ -271,7 +285,7 @@
 }
 
 .mat-list-base .mat-subheader {
-    color: rgba(255, 255, 255, .7)
+    color: white
 }
 
 .mat-list-item-disabled {
@@ -279,67 +293,42 @@
 }
 
 .mat-list-option:hover, .mat-list-option:focus, .mat-nav-list .mat-list-item:hover, .mat-nav-list .mat-list-item:focus, .mat-action-list .mat-list-item:hover, .mat-action-list .mat-list-item:focus {
-    background: rgba(255, 255, 255, .04)
+    background: white
 }
 
-.mat-list-single-selected-option, .mat-list-single-selected-option:hover, .mat-list-single-selected-option:focus {
-    background: rgba(255, 255, 255, .12)
-}
 
-.mat-menu-panel {
-    background: #424242
-}
 
-.mat-menu-panel:not([class*=mat-elevation-z]) {
-    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)
-}
 
-.mat-menu-item {
-    background: transparent;
-    color: #fff
-}
 
-.mat-menu-item[disabled], .mat-menu-item[disabled]::after, .mat-menu-item[disabled] .mat-icon-no-color {
-    color: rgba(255, 255, 255, .5)
-}
+
+
 
 .mat-menu-item .mat-icon-no-color, .mat-menu-item-submenu-trigger::after {
     color: #fff
 }
 
 .mat-menu-item:hover:not([disabled]), .mat-menu-item.cdk-program-focused:not([disabled]), .mat-menu-item.cdk-keyboard-focused:not([disabled]), .mat-menu-item-highlighted:not([disabled]) {
-    background: rgba(255, 255, 255, .04)
+    background: white
 }
 
-.mat-paginator {
-    background: #424242
-}
 
-.mat-paginator, .mat-paginator-page-size .mat-select-trigger {
-    color: rgba(255, 255, 255, .7)
-}
-
-.mat-paginator-decrement, .mat-paginator-increment {
-    border-top: 2px solid #fff;
-    border-right: 2px solid #fff
-}
 
 .mat-form-field.mat-focused.mat-primary .mat-select-arrow {
-    color: #7b1fa2
+    color: white                    
 }
 
 .mat-form-field.mat-focused.mat-accent .mat-select-arrow {
-    color: #69f0ae
+    color: white
 }
 
 .mat-form-field.mat-focused.mat-warn .mat-select-arrow {
-    color: #f44336
+    color: white
 }
 
 .mat-form-field .mat-select.mat-select-invalid .mat-select-arrow {
-    color: #f44336
+    color: white
 }
 
 .mat-form-field .mat-select.mat-select-disabled .mat-select-arrow {
-    color: rgba(255, 255, 255, .5)
+    color: white
 }

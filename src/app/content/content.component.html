@@ -6,7 +6,7 @@
         <a class="navbar-brand" href="https://www.okta.com/services/success-and-support/" target="_blank">
         <img src="https://cdn.brandfolder.io/2VK5Y09C/at/5hf5mqw3gjt7k9jh9ss875b/Logo_Customer-Success_45x250.png?height=54&width=300" alt="Okta Customer Success"  class="cs_image"> 
         </a>
-        <form [formGroup]="loginform" (ngSubmit)="onSubmit()" id="loginpage" class="loginplate">
+        <form [formGroup]="loginform" (ngSubmit)="onSubmit()" id="loginpage" class="loginplate" cdkfocusregionstart="true">
             <p *ngIf="loginInvalid" class="text-danger">
                 <!-- The username and password were not recognized -->
             </p>      
@@ -14,7 +14,7 @@
                     <mat-form-field appearance="legacy" [style.width.px]=350 >
                     <mat-label class="form-label">Username</mat-label>
                     <!-- <input matInput placeholder="Enter email address" cdkFocusInitial input type="email" class="form-control" id="username" autocomplete="username" formControlName="username" required> -->
-                    <input matInput placeholder="Enter email address" input type="email" class="form-control" id="username" autocomplete="username" formControlName="username" required class="input_box">
+                    <input matInput placeholder="Enter email address" cdkFocusInitial input type="email" class="form-control" id="username" autocomplete="username" formControlName="username" required class="input_box">
                     <mat-icon matSuffix>adb</mat-icon>
                     </mat-form-field>
             </div>
@@ -26,7 +26,7 @@
                     </mat-form-field> 
             </div> 
         
-            <button id="modal-login-button" type="submit" class="btn btn-primary mt-4 mb-3">Login</button>
+            <button id="login-button" type="submit" class="btn btn-primary mt-4 mb-3">Login</button>
             
                 
         </form>

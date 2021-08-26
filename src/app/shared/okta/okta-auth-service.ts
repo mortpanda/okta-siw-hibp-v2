@@ -6,10 +6,10 @@ import { OktaAuth } from "@okta/okta-auth-js";
 })
 export class OktaSDKAuthService {
   constructor(){ }
-  strRedirectURL = 'https://192.168.1.210:4200/home';
-  strClientID = '0oa14uubjk8PiOnrR1d7';
-  strIssuer = 'https://kent-nagao-test.oktapreview.com/oauth2/aus14xmr8soQUuZda1d7';
-  strPostLogoutURL = 'https://192.168.1.210:4200/home';
+  strRedirectURL = 'https://192.168.1.210:4200/';
+  strClientID = '0oa18tefheexDDijM1d7';
+  strIssuer = 'https://csm-apac.oktapreview.com/oauth2/default';
+  strPostLogoutURL = 'https://192.168.1.210:4200/';
   strScope = ['openid', 'email', 'profile'];
   strResponseType = ['token','id_token'];
   strResponseMode = 'fragment';

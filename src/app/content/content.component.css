@@ -1,4 +1,12 @@
 
+.loggedinuser{
+    text-align: center;
+    color: white;
+    font-size: 20px;    
+
+
+}
+
 .btn btn-primary mt-4 mb-3 {
     width: 200px !important;
 }
@@ -331,4 +339,22 @@
 
 .mat-form-field .mat-select.mat-select-disabled .mat-select-arrow {
     color: white
+}
+
+#okta-sign-in {
+    font-family: proxima nova,montserrat,Arial,Helvetica,sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+    background-color: #f9f9f9;
+    color: #777;
+    position: relative;
+    overflow: auto;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    height: auto;
+    margin: 15px auto 8px !important;
+    width: 400px;
+    min-width: 300px;
 }

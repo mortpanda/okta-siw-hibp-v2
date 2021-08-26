@@ -11,8 +11,8 @@ import '@okta/okta-signin-widget/dist/css/okta-sign-in.min.css';
 })
 export class AuthService {
   private authClient = new OktaAuth({
-    issuer: "https://kent-nagao-test.oktapreview.com/oauth2/aus14xmr8soQUuZda1d7",
-    clientId: "0oa14uubjk8PiOnrR1d7",
+    issuer: "https://csm-apac.oktapreview.com/oauth2/default",
+    clientId: "0oa18tefheexDDijM1d7",
   });
 
   public isAuthenticated = new BehaviorSubject<boolean>(false);
@@ -38,17 +38,17 @@ export class AuthService {
             
             //Uses the state token to perform MFA authentication using a newly created widget
             var oktaSignIn = new OktaSignIn({
-              clientId: '0oa14uubjk8PiOnrR1d7',
-              baseUrl: 'https://kent-nagao-test.oktapreview.com',
+              clientId: '0oa18tefheexDDijM1d7',
+              baseUrl: 'https://csm-apac.oktapreview.com',
               language: 'ja',
-              redirectUri: 'https://192.168.1.210:4200/home',
+              redirectUri: 'https://192.168.1.210:4200/',
               colors: {
                   brand: '#00297A',
                 },
               stateToken: this.strstateToken,
-              postLogoutRedirectUri:'https://192.168.1.210:4200/home',
+              postLogoutRedirectUri:'https://192.168.1.210:4200/',
               authParams: {
-                issuer: "https://kent-nagao-test.oktapreview.com/oauth2/aus14xmr8soQUuZda1d7",
+                issuer: "https://csm-apac.oktapreview.com/oauth2/default",
                 responseMode: 'fragment',
                 responseType: ['token','id_token'],
                 scopes: ['openid', 'email', 'profile'],
@@ -78,7 +78,7 @@ export class AuthService {
                 .then(function(user) {
                   // user has details about the user
                   console.log(JSON.stringify(user));
-                  window.location.replace("https://192.168.1.210:4200/home");
+                  window.location.replace("http://192.168.1.210:4200/");
                 })
                 .catch(function(err) {
                   // handle OAuthError or AuthSdkError (AuthSdkError will be thrown if app is in OAuthCallback state)
@@ -92,7 +92,7 @@ export class AuthService {
 
   OktaLogout(bar?: string){ 
     this.authClient.tokenManager.clear();
-    this.authClient.signOut({postLogoutRedirectUri : 'https://192.168.1.210:4200/home',idToken: this.idToken});
+    this.authClient.signOut({postLogoutRedirectUri : 'https://192.168.1.210:4200/',idToken: this.idToken});
     location.reload();
 }
             

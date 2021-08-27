@@ -10,6 +10,7 @@ import { ViewEncapsulation } from '@angular/core';
 
 import { ViewChild, AfterViewInit } from '@angular/core';
 import {OktaSDKAuthService} from 'app/shared/okta/okta-auth-service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-navbar',

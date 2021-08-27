@@ -5,7 +5,9 @@ import { OktaAuth } from "@okta/okta-auth-js";
 import { ViewEncapsulation } from '@angular/core';
 import { OktaSDKAuthService } from 'app/shared/okta/okta-auth-service';
 import { DOCUMENT } from '@angular/common';
-
+import CryptoJS from 'crypto-js';
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
 
 
 @Component({
@@ -15,12 +17,17 @@ import { DOCUMENT } from '@angular/common';
   encapsulation: ViewEncapsulation.None
 })
 export class ContentComponent implements OnInit {
+
+  uriHibp = 'https://api.pwnedpasswords.com/range/';
+  results: string[];
   loginform: FormGroup;
   public loginInvalid: boolean;
   private formSubmitAttempt: boolean;
   private returnUrl: string;
+  
 
-  constructor(private fb: FormBuilder, private authService: AuthService, private oktaSDKAuth: OktaSDKAuthService) { }
+  constructor(private fb: FormBuilder, private authService: AuthService, private oktaSDKAuth: OktaSDKAuthService, private http: HttpClient) { }
+
 
   async ngOnInit() {
 
@@ -70,8 +77,73 @@ export class ContentComponent implements OnInit {
     }
   }
 
+
+
   async onSubmit() {
+    var username = this.loginform.get("username").value;
+    var password = this.loginform.get("password").value;
+    
     console.log("event fired");
+    console.log("Hashing entered password....")
+
+    var strPasswordHash = CryptoJS.SHA1(password).toString();
+
+    console.log("Hashed password is " + strPasswordHash);
+    document.getElementById("console").innerHTML += " ";
+    document.getElementById("console").innerHTML += "<font color=white>" + '&nbsp' + '&nbsp' + "ハッシュ化されてパスワードは "
+      + "<font color=red>" + strPasswordHash + "<font color=white>" + " です。" + "<br>";
+
+    var strQueryString = strPasswordHash.substring(0, 5);
+    var strCompareText = (strPasswordHash.substring(5, 999));
+    console.log(strQueryString);
+    document.getElementById("console").innerHTML += "<font color=white>" + '&nbsp' + '<br>' + '&nbsp' + '&nbsp' + "  HIBP検索文字列 "
+      + "<font color=red>" + strQueryString + "<br>";
+      document.getElementById("console").innerHTML += "<br> <br> <h1 style=" + "'padding: 15px'>" + "CHECKING HIBP.......";
+
+    //document.getElementById("console").innerHTML = " ";
+    
+    //CustomerSuccess123!
+    //5571c199a30025e5d9a855282cd0f949e911bc5c
+    //5571c199a30025e5d9a855282cd0f949e911bc5c
+    //curl GET https://api.pwnedpasswords.com/range/5571c
+    
+    var strGetUrI = this.uriHibp + strQueryString
+    this.http.get(strGetUrI, { responseType: 'text' })
+      // レスポンスはテキストとしてsubscribeに渡される
+      .subscribe(text => {
+        console.log(text)
+        var strResponse = text;
+        var strMatchedPW
+        var strResponseLine = strResponse.split("\n");
+        const myDiv = document.getElementById("console"); 
+        for (var i = 0; i < strResponseLine.length; i++) {
+          var arrLines = strResponseLine[i].split(":");
+          var strHIBPhas = arrLines[0].toUpperCase();
+          //console.log(strResponseLine[i]);
+          document.getElementById("console").innerHTML += '&nbsp' + '&nbsp' + '&nbsp' + strResponseLine[i].toUpperCase() + "<br>";
+          if(strCompareText.toUpperCase()==strHIBPhas){
+            var FoundMatch = true;
+            
+            strMatchedPW = arrLines[1];
+            document.getElementById("console").innerHTML += "<font color=red>" + '&nbsp' + '&nbsp' + strResponseLine[i] + "<br>"; 
+          }        
+          else{
+            FoundMatch = false;
+          }
+        }
+        // if(FoundMatch==false){
+        //   document.getElementById("console").innerHTML += '&nbsp' + '&nbsp' + "Match not found" + "<br>"; 
+        // }
+
+        
+        //document.getElementById("console").innerHTML += + '&nbsp' + '&nbsp' + '&nbsp' + text + "<br>";
+        myDiv.scrollTop = myDiv.scrollHeight;
+        myDiv.scrollTop = myDiv.scrollHeight;
+      });
+
+
+
+
     console.log("loginInvalid", this.loginInvalid);
     console.log("formSubmitAttempt", this.formSubmitAttempt);
     console.log("returnUrl", this.oktaSDKAuth.strRedirectURL);
@@ -80,8 +152,7 @@ export class ContentComponent implements OnInit {
     this.formSubmitAttempt = false;
     //if (this.loginform.valid) {
     //try {
-    var username = this.loginform.get("username").value;
-    var password = this.loginform.get("password").value;
+
     await this.authService.login(username, password);
     //} catch (err) {
     //alert(this.authService.strstateToken)      

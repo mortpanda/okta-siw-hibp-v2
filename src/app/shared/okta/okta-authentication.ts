@@ -28,6 +28,7 @@ export class AuthService {
   }
 
   async login(username: string, password: string) {
+    
     const transaction = await this.authClient.signIn({ username, password });
     
             var element = document.getElementById("loginpage");

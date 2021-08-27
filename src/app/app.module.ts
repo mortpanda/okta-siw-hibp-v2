@@ -48,7 +48,9 @@ import { ContentComponent } from './content/content.component';
 
 import { LandingComponent } from './examples/landing/landing.component';
 import { HomeComponent } from './home/home.component';
-import {A11yModule} from '@angular/cdk/a11y'; 
+import {A11yModule} from '@angular/cdk/a11y';
+import { EnContentComponent } from './en-content/en-content.component'; 
+
 
 
 
@@ -63,6 +65,7 @@ import {A11yModule} from '@angular/cdk/a11y';
     ContentComponent,
     LandingComponent,
     HomeComponent,
+    EnContentComponent,
     
     
     
@@ -98,7 +101,7 @@ import {A11yModule} from '@angular/cdk/a11y';
     FlexLayoutModule,
     
     A11yModule,
-    
+    HttpClientModule
 
   ],
   exports: [ContentComponent],

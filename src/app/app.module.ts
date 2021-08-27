@@ -49,7 +49,8 @@ import { ContentComponent } from './content/content.component';
 import { LandingComponent } from './examples/landing/landing.component';
 import { HomeComponent } from './home/home.component';
 import {A11yModule} from '@angular/cdk/a11y';
-import { EnContentComponent } from './en-content/en-content.component'; 
+import { EnContentComponent } from './en-content/en-content.component';
+import { EnComponent } from './en/en.component'; 
 
 
 
@@ -66,6 +67,7 @@ import { EnContentComponent } from './en-content/en-content.component';
     LandingComponent,
     HomeComponent,
     EnContentComponent,
+    EnComponent,
     
     
     

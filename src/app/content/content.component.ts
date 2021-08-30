@@ -10,6 +10,8 @@ import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 
 
+declare const RemoveLoginWidget: any;
+
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',
@@ -24,13 +26,13 @@ export class ContentComponent implements OnInit {
   public loginInvalid: boolean;
   private formSubmitAttempt: boolean;
   private returnUrl: string;
-  
+
 
   constructor(private fb: FormBuilder, private authService: AuthService, private oktaSDKAuth: OktaSDKAuthService, private http: HttpClient) { }
 
 
   async ngOnInit() {
-
+    RemoveLoginWidget();
     this.loginform = this.fb.group({
       username: ["", Validators.email],
       password: ["", Validators.required]
@@ -72,8 +74,6 @@ export class ContentComponent implements OnInit {
         .catch(function (err) {
           // not logged in
         });
-
-      //window.location.replace(this.oktaSDKAuth.strRedirectURL);
     }
   }
 
@@ -82,7 +82,7 @@ export class ContentComponent implements OnInit {
   async onSubmit() {
     var username = this.loginform.get("username").value;
     var password = this.loginform.get("password").value;
-    
+
     console.log("event fired");
     console.log("Hashing entered password....")
 
@@ -98,15 +98,8 @@ export class ContentComponent implements OnInit {
     console.log(strQueryString);
     document.getElementById("console").innerHTML += "<font color=white>" + '&nbsp' + '<br>' + '&nbsp' + '&nbsp' + "  HIBP検索文字列 "
       + "<font color=red>" + strQueryString + "<br>";
-      document.getElementById("console").innerHTML += "<br> <br> <h1 style=" + "'padding: 15px'>" + "CHECKING HIBP.......";
+    document.getElementById("console").innerHTML += "<br> <br> <h1 style=" + "'padding: 15px'>" + "CHECKING HIBP.......";
 
-    //document.getElementById("console").innerHTML = " ";
-    
-    //CustomerSuccess123!
-    //5571c199a30025e5d9a855282cd0f949e911bc5c
-    //5571c199a30025e5d9a855282cd0f949e911bc5c
-    //curl GET https://api.pwnedpasswords.com/range/5571c
-    
     var strGetUrI = this.uriHibp + strQueryString
     this.http.get(strGetUrI, { responseType: 'text' })
       // レスポンスはテキストとしてsubscribeに渡される
@@ -114,40 +107,33 @@ export class ContentComponent implements OnInit {
         console.log(text)
         var strResponse = text;
         var strMatchedPW
+        var intBreached
         var strResponseLine = strResponse.split("\n");
-        const myDiv = document.getElementById("console"); 
+        const myDiv = document.getElementById("console");
         for (var i = 0; i < strResponseLine.length; i++) {
           var arrLines = strResponseLine[i].split(":");
           var strHIBPhas = arrLines[0].toUpperCase();
           //console.log(strResponseLine[i]);
           document.getElementById("console").innerHTML += '&nbsp' + '&nbsp' + '&nbsp' + strResponseLine[i].toUpperCase() + "<br>";
-          if(strCompareText.toUpperCase()==strHIBPhas){
-            var FoundMatch = true;
-            
-            strMatchedPW = arrLines[1];
-            document.getElementById("console").innerHTML += "<font color=red>" + '&nbsp' + '&nbsp' + strResponseLine[i] + "<br>"; 
-          }        
-          else{
-            FoundMatch = false;
+          if (strCompareText.toUpperCase() == strHIBPhas) {
+
+            strMatchedPW = arrLines[0];
+            intBreached = arrLines[1];
+            document.getElementById("console").innerHTML += "<font color=red>" + '&nbsp' + '&nbsp' + strResponseLine[i] + "<br>";
+          }
+          else {
           }
         }
-        // if(FoundMatch==false){
-        //   document.getElementById("console").innerHTML += '&nbsp' + '&nbsp' + "Match not found" + "<br>"; 
-        // }
+        console.log(strMatchedPW);
+        console.log(intBreached);
+        document.getElementById("console").innerHTML += "<h2>" + '&nbsp' + '&nbsp' + "<font color=white>" + "入力されたパスワードはHIBPによると " + "<font color=red>" + intBreached + "<font color=white>" + " 回の漏洩履歴があります。" + "</h2>";
 
-        
-        //document.getElementById("console").innerHTML += + '&nbsp' + '&nbsp' + '&nbsp' + text + "<br>";
         myDiv.scrollTop = myDiv.scrollHeight;
         myDiv.scrollTop = myDiv.scrollHeight;
       });
-
-
-
-
-    console.log("loginInvalid", this.loginInvalid);
-    console.log("formSubmitAttempt", this.formSubmitAttempt);
-    console.log("returnUrl", this.oktaSDKAuth.strRedirectURL);
-
+    //console.log("loginInvalid", this.loginInvalid);
+    //console.log("formSubmitAttempt", this.formSubmitAttempt);
+    //console.log("returnUrl", this.oktaSDKAuth.strRedirectURL);
     this.loginInvalid = false;
     this.formSubmitAttempt = false;
     //if (this.loginform.valid) {

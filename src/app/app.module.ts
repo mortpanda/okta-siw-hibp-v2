@@ -51,7 +51,13 @@ import { HomeComponent } from './home/home.component';
 import {A11yModule} from '@angular/cdk/a11y';
 import { EnContentComponent } from './en-content/en-content.component';
 import { EnComponent } from './en/en.component'; 
-
+import {MatTabsModule} from '@angular/material/tabs'; 
+import { AutoFocusDirectiveDirective } from './shared/auto-focus-directive.directive';
+import { AutoFocusDirectiveDirectiveEN } from './shared/auto-focus-directive.directiveEN';
+import { WidgetJpComponent } from './widget-jp/widget-jp.component';
+import { WidgetJpContentComponent } from './widget-jp-content/widget-jp-content.component';
+import { WidgetEnComponent } from './widget-en/widget-en.component';
+import { WidgetEnContentComponent } from './widget-en-content/widget-en-content.component';
 
 
 
@@ -68,6 +74,12 @@ import { EnComponent } from './en/en.component';
     HomeComponent,
     EnContentComponent,
     EnComponent,
+    AutoFocusDirectiveDirective,
+    AutoFocusDirectiveDirectiveEN,
+    WidgetJpComponent,
+    WidgetJpContentComponent,
+    WidgetEnComponent,
+    WidgetEnContentComponent,
     
     
     
@@ -103,7 +115,9 @@ import { EnComponent } from './en/en.component';
     FlexLayoutModule,
     
     A11yModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTabsModule,
+    
 
   ],
   exports: [ContentComponent],

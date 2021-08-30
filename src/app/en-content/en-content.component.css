@@ -14,6 +14,7 @@ body{
     width: 200px !important;
 }
 
+
 .loginplate{
     /* background-color:white;  */
     z-index: 9999;
@@ -41,11 +42,11 @@ body{
     font-size: 15px;
 } */
 .cs_image{
-    z-index: 9999;
+    z-index: 99999;
 }
 
 .container{
-    padding-bottom: 70px;
+    padding-bottom: 10px;
 }
 
 .console {
@@ -162,9 +163,9 @@ body{
     color: white;
 }
 
-/* .mat-form-field.mat-form-field-invalid .mat-form-field-ripple, .mat-form-field.mat-form-field-invalid .mat-form-field-ripple.mat-accent {
-    background-color: #f44336
-} */
+ .mat-form-field.mat-form-field-invalid .mat-form-field-ripple, .mat-form-field.mat-form-field-invalid .mat-form-field-ripple.mat-accent {
+    background-color: white;
+} 
 .mat-form-field-appearance-legacy .mat-form-field-label {
     color: white;
 }
@@ -174,17 +175,20 @@ body{
 }
 
 .mat-form-field-appearance-legacy .mat-form-field-underline {
-    background-color: white
+    background-color: white;
+    color: white;
 }
 
 .mat-form-field-appearance-legacy.mat-form-field-disabled .mat-form-field-underline {
     background-image: linear-gradient(to right, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.7) 33%, transparent 0%);
     background-size: 4px 100%;
-    background-repeat: repeat-x
+    background-repeat: repeat-x;
+    color: white;
 }
 
 .mat-form-field-appearance-standard .mat-form-field-underline {
-    background-color: rgba(255, 255, 255, .7)
+    background-color: white;
+    color: white;
 }
 
 .mat-form-field-appearance-standard.mat-form-field-disabled .mat-form-field-underline {
@@ -335,7 +339,7 @@ body{
 }
 
 .mat-form-field.mat-focused.mat-accent .mat-select-arrow {
-    color: white
+    color: #6E6E78
 }
 
 .mat-form-field.mat-focused.mat-warn .mat-select-arrow {
@@ -367,3 +371,4 @@ body{
     width: 400px;
     min-width: 300px;
 }
+

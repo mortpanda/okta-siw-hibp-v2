@@ -5,7 +5,7 @@ var strMatchedPW;
 function OktaWidget() {
     
     const oktaSignIn = new OktaSignIn({
-        //logo: 'https://www.okta.com/sites/default/files/media/image/2021-03/Logo_Okta_Blue_RGB.png',
+        logo: 'https://www.okta.com/sites/default/files/media/image/2021-03/Logo_Okta_Blue_RGB.png',
         language: 'ja',
         colors: {
             brand: '#00297A'

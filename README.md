@@ -12,6 +12,7 @@ More information on the [HIBP](https://haveibeenpwned.com/) API can be found her
 
 ## Screenshots 
 ![](Capture-1-eng.PNG)
+![](Capture-2-eng.PNG)
 ![](Capture-1-jpn.PNG)
 
 ## Pre-requisites for running this application
@@ -68,7 +69,8 @@ typescript                      4.1.6
 
 `http://localhost:4200`
 
-- Update the below file with the information from your org,
+
+- Update the below files with the information from your org,
 
 `src/app/okta-widget.js`
 
@@ -78,35 +80,4 @@ typescript                      4.1.6
 
 `src/app/shared/okta-authentication.ts`
 
-
-- Inside the files, the below section will need to be updated with your setting.
-
-```
-language: 'ja',
-	i18n: { 
-	//Overrides default text when using English. 
-	//Override other languages by adding 
-	//additional sections.
-		'en': {
-			'primaryauth.title': 'Log In',             
-			'primaryauth.submit': 'Log In',            
-		}
-    },
-    features: {
-        registration: true,                           
-		// Enable self-service registration flow
-        rememberMe: false,                             
-		// Setting to false will remove the checkbox to save username
-    },
-    baseUrl: "{{Base URL of the Okta org}}",
-    redirectUri: "{{Redirect URL set in the Okta OIDC app}}",
-    clientId: "{{Okta OIDC Application's client ID}}",   //CLIENT ID GOES HERE
-    authParams: {
-		issuer: '{{OIDC authorisation server URL}}',
-        responseType: ['token', 'id_token'],
-        responseMode: 'fragment',
-        display: 'page',
-        scope: ['openid','email','profile']
-    },
-```
 

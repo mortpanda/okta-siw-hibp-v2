@@ -106,34 +106,43 @@ export class ContentComponent implements OnInit {
       .subscribe(text => {
         console.log(text)
         var strResponse = text;
-        var strMatchedPW
-        var intBreached
+        var strMatchedPW;
+        var intBreached;
         var strResponseLine = strResponse.split("\n");
+        var strBreached: Boolean;
         const myDiv = document.getElementById("console");
+        strBreached = false;
         for (var i = 0; i < strResponseLine.length; i++) {
           var arrLines = strResponseLine[i].split(":");
           var strHIBPhas = arrLines[0].toUpperCase();
           //console.log(strResponseLine[i]);
-          document.getElementById("console").innerHTML += '&nbsp' + '&nbsp' + '&nbsp' + strResponseLine[i].toUpperCase() + "<br>";
+
           if (strCompareText.toUpperCase() == strHIBPhas) {
 
             strMatchedPW = arrLines[0];
             intBreached = arrLines[1];
-            document.getElementById("console").innerHTML += "<font color=red>" + '&nbsp' + '&nbsp' + strResponseLine[i] + "<br>";
+            document.getElementById("console").innerHTML += "<font color=red>" + '&nbsp' + '&nbsp' + strResponseLine[i].toUpperCase() + "<br>";
+            strBreached = true;
           }
           else {
+            document.getElementById("console").innerHTML += '&nbsp' + '&nbsp' + '&nbsp' + strResponseLine[i].toUpperCase() + "<br>";
+
           }
         }
         console.log(strMatchedPW);
         console.log(intBreached);
-        document.getElementById("console").innerHTML += "<h2>" + '&nbsp' + '&nbsp' + "<font color=white>" + "入力されたパスワードはHIBPによると " + "<font color=red>" + intBreached + "<font color=white>" + " 回の漏洩履歴があります。" + "</h2>";
+        console.log(strBreached);
+        if (strBreached == true) {
+          document.getElementById("console").innerHTML += "<h2>" + '&nbsp' + '&nbsp' + "<font color=white>" + "入力されたパスワードはHIBPによると " + "<font color=red>" + intBreached + "<font color=white>" + " 回の漏洩履歴があります。" + "</h2>";
+        }
+        else {
 
+          document.getElementById("console").innerHTML += "<h2>" + '&nbsp' + '&nbsp' + "<font color=white>" + "入力されたパスワードはHIBPによると漏洩履歴がありません。" + "</h2>";
+        }
         myDiv.scrollTop = myDiv.scrollHeight;
         myDiv.scrollTop = myDiv.scrollHeight;
       });
-    //console.log("loginInvalid", this.loginInvalid);
-    //console.log("formSubmitAttempt", this.formSubmitAttempt);
-    //console.log("returnUrl", this.oktaSDKAuth.strRedirectURL);
+
     this.loginInvalid = false;
     this.formSubmitAttempt = false;
     //if (this.loginform.valid) {

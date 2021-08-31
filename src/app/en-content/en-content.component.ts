@@ -4,10 +4,10 @@ import { AuthService } from "app/shared/okta/okta-authenticationEN";
 import { OktaAuth } from "@okta/okta-auth-js";
 import { ViewEncapsulation } from '@angular/core';
 import { OktaSDKAuthService } from 'app/shared/okta/okta-auth-service';
-import { DOCUMENT } from '@angular/common';
+//import { DOCUMENT } from '@angular/common';
 import CryptoJS from 'crypto-js';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
+//import { Observable, throwError } from 'rxjs';
 
 //declare const RemoveLoginWidget: any;
 
@@ -106,34 +106,47 @@ export class EnContentComponent implements OnInit {
       .subscribe(text => {
         console.log(text)
         var strResponse = text;
-        var strMatchedPW
-        var intBreached
+        var strMatchedPW;
+        var intBreached;
+        var strBreached: Boolean;
         var strResponseLine = strResponse.split("\n");
         const myDiv = document.getElementById("console");
+        strBreached = false;
         for (var i = 0; i < strResponseLine.length; i++) {
           var arrLines = strResponseLine[i].split(":");
           var strHIBPhas = arrLines[0].toUpperCase();
           //console.log(strResponseLine[i]);
-          document.getElementById("console").innerHTML += '&nbsp' + '&nbsp' + '&nbsp' + strResponseLine[i].toUpperCase() + "<br>";
+
           if (strCompareText.toUpperCase() == strHIBPhas) {
 
             strMatchedPW = arrLines[0];
             intBreached = arrLines[1];
-            document.getElementById("console").innerHTML += "<font color=red>" + '&nbsp' + '&nbsp' + strResponseLine[i] + "<br>";
+            document.getElementById("console").innerHTML += "<font color=red>" + '&nbsp' + '&nbsp' + strResponseLine[i].toUpperCase() + "<br>";
+            strBreached = true;
           }
           else {
+            document.getElementById("console").innerHTML += '&nbsp' + '&nbsp' + '&nbsp' + strResponseLine[i].toUpperCase() + "<br>";
+
           }
         }
         console.log(strMatchedPW);
         console.log(intBreached);
-        document.getElementById("console").innerHTML += "<h2>" + '&nbsp' + '&nbsp' + "<font color=white>" + "According to HIBP, the entered password has been found to be breached " + "<font color=red>" + intBreached + "<font color=white>" + " times." + "</h2>";
+        console.log(strBreached);
+        if (strBreached == true) {
+          document.getElementById("console").innerHTML += "<h2>" + '&nbsp' + '&nbsp' + "<font color=white>" + "According to HIBP, the entered password has been found to be breached " + "<font color=red>" + intBreached + "<font color=white>" + " times." + "</h2>";
+        }
+        else {
+
+          document.getElementById("console").innerHTML += "<h2>" + '&nbsp' + '&nbsp' + "<font color=white>" + "HIBP has not flagged this password as a breached password for now" + "</h2>";
+        }
+        myDiv.scrollTop = myDiv.scrollHeight;
+        myDiv.scrollTop = myDiv.scrollHeight;
+
 
         myDiv.scrollTop = myDiv.scrollHeight;
         myDiv.scrollTop = myDiv.scrollHeight;
       });
-    //console.log("loginInvalid", this.loginInvalid);
-    //console.log("formSubmitAttempt", this.formSubmitAttempt);
-    //console.log("returnUrl", this.oktaSDKAuth.strRedirectURL);
+
     this.loginInvalid = false;
     this.formSubmitAttempt = false;
     //if (this.loginform.valid) {

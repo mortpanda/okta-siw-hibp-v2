@@ -48,7 +48,10 @@ body{
     padding-bottom: 10px;
     
 }
-
+.section{
+    background-color: rgb(15, 15, 16)!important;
+    padding-left: 14px;
+}
 .console {
     z-index: 9999;
     position: relative;
@@ -59,7 +62,7 @@ body{
     padding-top: 30px;
     margin-top: 8px;
     overflow: hidden;
-    background-color: rgb(15, 15, 16);
+    background-color: rgb(15, 15, 16)!important;
     color: white;
     overflow-y: scroll;   
     word-break:break-word;
@@ -80,6 +83,7 @@ body{
     line-height: 0;
     padding: 14px 0;
     text-indent: 4px;
+    
     /* overflow-y: scroll; */
 }
 
@@ -90,10 +94,13 @@ body{
     padding: 0 1rem 1rem;
     margin: 0;
     overflow-y: scroll;
+    
+    
 }
 
 .mat-form-field-label {
     color: #00297A;
+    
 }
 
 /* input.mat-input-element{
@@ -106,6 +113,7 @@ body{
     border-radius: 10px;
     padding: 5px;
     width: 350px;
+    
 }
 
 .mat-hint {
@@ -334,13 +342,6 @@ body{
     background: #00297A;
 }
 
-
-
-
-
-
-
-
 .mat-menu-item .mat-icon-no-color, .mat-menu-item-submenu-trigger::after {
     color: #00297A;
 }
@@ -384,7 +385,8 @@ body{
     border-style: solid;
     border-width: 1px;
     height: auto;
-    margin: 15px auto 8px !important;
+    margin: 1px auto 8px !important;
     width: 400px;
     min-width: 300px;
 }
+

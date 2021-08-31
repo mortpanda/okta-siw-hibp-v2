@@ -80,6 +80,7 @@ body{
     line-height: 0;
     padding: 14px 0;
     text-indent: 4px;
+    
     /* overflow-y: scroll; */
 }
 
@@ -90,10 +91,13 @@ body{
     padding: 0 1rem 1rem;
     margin: 0;
     overflow-y: scroll;
+    
+    
 }
 
 .mat-form-field-label {
     color: #00297A;
+    
 }
 
 /* input.mat-input-element{
@@ -106,6 +110,7 @@ body{
     border-radius: 10px;
     padding: 5px;
     width: 350px;
+    
 }
 
 .mat-hint {

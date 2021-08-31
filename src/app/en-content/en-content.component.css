@@ -14,27 +14,26 @@ body{
     width: 200px !important;
 }
 
-
 .loginplate{
     /* background-color:white;  */
-    z-index: 9999;
+    /* z-index: 9999; */
     padding: 20px;
     border-width: 50px;
     border-style: hidden;
     /* color: #41414B; */
     /* color: black; */
-    color: white;
+    color: #00297A;
     font-size: 12px;
     padding-top: 97px;
 }
 
 .form-label{   
-    color: white;
+    color: #00297A;
 }
 
 
 .input_box{
-    color: white;
+    color: #00297A;
 }
 /* .form_username{
     background-color: white;
@@ -42,11 +41,12 @@ body{
     font-size: 15px;
 } */
 .cs_image{
-    z-index: 99999;
+    z-index: 9999;
 }
 
 .container{
     padding-bottom: 10px;
+    
 }
 
 .console {
@@ -93,7 +93,7 @@ body{
 }
 
 .mat-form-field-label {
-    color: #6E6E78;
+    color: #00297A;
 }
 
 /* input.mat-input-element{
@@ -101,34 +101,35 @@ body{
  } */
 
  .mat-form-field {
-    background-color: #6E6E78;
+    color:#00297A;
+    background-color: white !important; 
     border-radius: 10px;
     padding: 5px;
     width: 350px;
 }
 
 .mat-hint {
-    color: white;
+    color: #00297A;
 }
 
 .mat-form-field.mat-focused .mat-form-field-label {
-    color: white;
+    color: #00297A;
 }
 
 .mat-form-field.mat-focused .mat-form-field-label.mat-accent {
-    color: white;
+    color: #00297A;
 }
 
 .mat-form-field.mat-focused .mat-form-field-label.mat-warn {
-    color: white;
+    color: #00297A;
 }
 
 .mat-focused .mat-form-field-required-marker {
-    color: white;
+    color: #00297A;
 }
 
 .mat-form-field-ripple {
-    background-color: #fff
+    background-color: #00297A
 }
 
 /* .mat-form-field.mat-focused .mat-form-field-ripple {
@@ -137,80 +138,90 @@ body{
 
 .mat-form-field.mat-focused .mat-form-field-ripple.mat-accent {
     background-color: white;
+    color: #00297A;
 }
 
 .mat-form-field.mat-focused .mat-form-field-ripple.mat-warn {
-    background-color: white
+    background-color: white;
+    color: #00297A;
 }
 
 .mat-form-field-type-mat-native-select.mat-focused:not(.mat-form-field-invalid) .mat-form-field-infix::after {
-    color: white;
+    /* color: white; */
+    color: #00297A;
 }
 
 .mat-form-field-type-mat-native-select.mat-focused:not(.mat-form-field-invalid).mat-accent .mat-form-field-infix::after {
-    color: white;
+    /* color: white; */
+    color: #00297A;
 }
 
 .mat-form-field-type-mat-native-select.mat-focused:not(.mat-form-field-invalid).mat-warn .mat-form-field-infix::after {
-    color: white;
+    color: #00297A;
 }
 
 .mat-form-field.mat-form-field-invalid .mat-form-field-label {
-    color: white;
+    color: #00297A;
 }
 
 .mat-form-field.mat-form-field-invalid .mat-form-field-label.mat-accent, .mat-form-field.mat-form-field-invalid .mat-form-field-label .mat-form-field-required-marker {
-    color: white;
+    color: #00297A;
 }
 
- .mat-form-field.mat-form-field-invalid .mat-form-field-ripple, .mat-form-field.mat-form-field-invalid .mat-form-field-ripple.mat-accent {
-    background-color: white;
-} 
+/* .mat-form-field.mat-form-field-invalid .mat-form-field-ripple, .mat-form-field.mat-form-field-invalid .mat-form-field-ripple.mat-accent {
+    background-color: #f44336
+} */
 .mat-form-field-appearance-legacy .mat-form-field-label {
-    color: white;
+    color: #00297A;
 }
 
 .mat-form-field-appearance-legacy .mat-hint {
-    color: white;
+    color: #00297A;
 }
 
 .mat-form-field-appearance-legacy .mat-form-field-underline {
-    background-color: white;
-    color: white;
+    background-color: #00297A;
+    
 }
 
 .mat-form-field-appearance-legacy.mat-form-field-disabled .mat-form-field-underline {
     background-image: linear-gradient(to right, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.7) 33%, transparent 0%);
     background-size: 4px 100%;
     background-repeat: repeat-x;
-    color: white;
+    color: #00297A;
 }
 
 .mat-form-field-appearance-standard .mat-form-field-underline {
-    background-color: white;
-    color: white;
+    background-color: rgba(255, 255, 255, .7);
+    color: #00297A;
 }
 
 .mat-form-field-appearance-standard.mat-form-field-disabled .mat-form-field-underline {
     background-image: linear-gradient(to right, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.7) 33%, transparent 0%);
     background-size: 4px 100%;
-    background-repeat: repeat-x
+    background-repeat: repeat-x;
+    color: #00297A;
 }
 
 .mat-form-field-appearance-fill .mat-form-field-flex {
+    color: #00297A;
     background-color: rgba(255, 255, 255, .1)
 }
 
 .mat-form-field-appearance-fill.mat-form-field-disabled .mat-form-field-flex {
+    color: #00297A;
     background-color: rgba(255, 255, 255, .05)
 }
 
 .mat-form-field-appearance-fill .mat-form-field-underline::before {
-    background-color: rgba(255, 255, 255, .5)
+    color: #00297A;
+    /* background-color: rgba(255, 255, 255, .5) */
+    background-color: white;
 }
 
 .mat-form-field-appearance-fill.mat-form-field-disabled .mat-form-field-label {
-    color: rgba(255, 255, 255, .5)
+    color: #00297A;
+    /* color: rgba(255, 255, 255, .5) */
 }
 
 .mat-form-field-appearance-fill.mat-form-field-disabled .mat-form-field-underline::before {
@@ -218,7 +229,8 @@ body{
 }
 
 .mat-form-field-appearance-outline .mat-form-field-outline {
-    color: rgba(255, 255, 255, .3)
+    color: #00297A;
+    /* color: rgba(255, 255, 255, .3) */
 }
 
 .mat-form-field-appearance-outline .mat-form-field-outline-thick {
@@ -242,43 +254,48 @@ body{
 }
 
 .mat-form-field-appearance-outline.mat-form-field-disabled .mat-form-field-label {
-    color: rgba(255, 255, 255, .5)
+    /* color: rgba(255, 255, 255, .5) */
+    color: #00297A;
 }
 
 .mat-form-field-appearance-outline.mat-form-field-disabled .mat-form-field-outline {
-    color: rgba(255, 255, 255, .15)
+    /* color: rgba(255, 255, 255, .15) */
+    color: #00297A;
 }
 
 .mat-form-field-type-mat-native-select .mat-form-field-infix::after {
-    color: rgba(255, 255, 255, .7)
+    /* color: rgba(255, 255, 255, .7) */
+    color: #00297A;
 }
 
 .mat-input-element:disabled, .mat-form-field-type-mat-native-select.mat-form-field-disabled .mat-form-field-infix::after {
-    color: rgba(255, 255, 255, .5)
+    /* color: rgba(255, 255, 255, .5) */
+    color: #00297A;
 }
 
 .mat-input-element {
+    color: #00297A;
     caret-color: #7b1fa2
 }
 
 .mat-input-element::placeholder {
-    color: white
+    color: #00297A;
 }
 
 .mat-input-element::-moz-placeholder {
-    color: white
+    color: #00297A;
 }
 
 .mat-input-element::-webkit-input-placeholder {
-    color: white
+    color: #00297A;
 }
 
 .mat-input-element:-ms-input-placeholder {
-    color: white
+    color: #00297A;
 }
 
 .mat-input-element option {
-    color: white
+    color: #00297A;
 }
 
 .mat-input-element option:disabled {
@@ -306,7 +323,7 @@ body{
 }
 
 .mat-list-base .mat-subheader {
-    color: white
+    color: #00297A;
 }
 
 .mat-list-item-disabled {
@@ -314,7 +331,7 @@ body{
 }
 
 .mat-list-option:hover, .mat-list-option:focus, .mat-nav-list .mat-list-item:hover, .mat-nav-list .mat-list-item:focus, .mat-action-list .mat-list-item:hover, .mat-action-list .mat-list-item:focus {
-    background: white
+    background: #00297A;
 }
 
 
@@ -325,33 +342,33 @@ body{
 
 
 .mat-menu-item .mat-icon-no-color, .mat-menu-item-submenu-trigger::after {
-    color: #fff
+    color: #00297A;
 }
 
 .mat-menu-item:hover:not([disabled]), .mat-menu-item.cdk-program-focused:not([disabled]), .mat-menu-item.cdk-keyboard-focused:not([disabled]), .mat-menu-item-highlighted:not([disabled]) {
-    background: white
+    background: #00297A;
 }
 
 
 
 .mat-form-field.mat-focused.mat-primary .mat-select-arrow {
-    color: white                    
+    color: #00297A;                    
 }
 
 .mat-form-field.mat-focused.mat-accent .mat-select-arrow {
-    color: #6E6E78
+    color: #00297A;
 }
 
 .mat-form-field.mat-focused.mat-warn .mat-select-arrow {
-    color: white
+    color: #00297A;
 }
 
 .mat-form-field .mat-select.mat-select-invalid .mat-select-arrow {
-    color: white
+    color: #00297A;
 }
 
 .mat-form-field .mat-select.mat-select-disabled .mat-select-arrow {
-    color: white
+    color: #00297A;
 }
 
 #okta-sign-in {
@@ -371,4 +388,3 @@ body{
     width: 400px;
     min-width: 300px;
 }
-

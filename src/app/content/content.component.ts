@@ -10,7 +10,7 @@ import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 
 
-declare const RemoveLoginWidget: any;
+//declare const RemoveLoginWidget: any;
 
 @Component({
   selector: 'app-content',
@@ -32,7 +32,7 @@ export class ContentComponent implements OnInit {
 
 
   async ngOnInit() {
-    RemoveLoginWidget();
+    //RemoveLoginWidget();
     this.loginform = this.fb.group({
       username: ["", Validators.email],
       password: ["", Validators.required]

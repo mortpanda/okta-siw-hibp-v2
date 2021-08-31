@@ -54,10 +54,7 @@ import { EnComponent } from './en/en.component';
 import {MatTabsModule} from '@angular/material/tabs'; 
 import { AutoFocusDirectiveDirective } from './shared/auto-focus-directive.directive';
 import { AutoFocusDirectiveDirectiveEN } from './shared/auto-focus-directive.directiveEN';
-import { WidgetJpComponent } from './widget-jp/widget-jp.component';
-import { WidgetJpContentComponent } from './widget-jp-content/widget-jp-content.component';
-import { WidgetEnComponent } from './widget-en/widget-en.component';
-import { WidgetEnContentComponent } from './widget-en-content/widget-en-content.component';
+
 
 
 
@@ -76,10 +73,7 @@ import { WidgetEnContentComponent } from './widget-en-content/widget-en-content.
     EnComponent,
     AutoFocusDirectiveDirective,
     AutoFocusDirectiveDirectiveEN,
-    WidgetJpComponent,
-    WidgetJpContentComponent,
-    WidgetEnComponent,
-    WidgetEnContentComponent,
+    
     
     
     

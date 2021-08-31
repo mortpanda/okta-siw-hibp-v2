@@ -27,28 +27,4 @@ export class OktaSDKAuthService {
     };
 
     OktaSDKAuthClient = new OktaAuth(this.config);    
-
-    
-
-  // OktaLogout(bar?: string){ 
-  //     this.OktaSDKAuthClient.tokenManager.clear();
-  //     this.OktaSDKAuthClient.signOut({post_logout_redirect_uri:'https://192.168.1.210:4200/home'});
-  //     location.reload();
-  // }
-
-
-
 }
- // var config = {
-        //     // Required config
-        //     issuer: 'https://kent-nagao-test.oktapreview.com/oauth2/aus14xmr8soQUuZda1d7',
-          
-        //     // Required for login flow using getWithRedirect()
-        //     clientId: '0oa14uubjk8PiOnrR1d7',
-        //     redirectUri: 'https://192.168.1.210:4200/home',
-        //     scopes: ['openid', 'email', 'profile'],
-          
-        //     // Parse authorization code from hash fragment instead of search query
-        //     responseMode: 'fragment',  
-        //   };
-          

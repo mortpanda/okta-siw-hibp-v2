@@ -82,32 +82,30 @@ typescript                      4.1.6
 - Inside the files, the below section will need to be updated with your setting.
 
 ```
-language: 'ja',
-	i18n: { 
-	//Overrides default text when using English. 
-	//Override other languages by adding 
-	//additional sections.
-		'en': {
-			'primaryauth.title': 'Log In',             
-			'primaryauth.submit': 'Log In',            
-		}
-    },
-    features: {
-        registration: true,                           
-		// Enable self-service registration flow
-        rememberMe: false,                             
-		// Setting to false will remove the checkbox to save username
-    },
-    baseUrl: "{{Base URL of the Okta org}}",
-    redirectUri: "{{Redirect URL set in the Okta OIDC app}}",
-    clientId: "{{Okta OIDC Application's client ID}}",   //CLIENT ID GOES HERE
-    authParams: {
-		issuer: '{{OIDC authorisation server URL}}',
-        responseType: ['token', 'id_token'],
-        responseMode: 'fragment',
-        display: 'page',
-        scope: ['openid','email','profile']
-    },
+export class OktaSDKAuthService {
+  constructor(){ }
+  strRedirectURL = "{{Your redirect URL}}";
+  strClientID = "{{Client ID}}";
+  strIssuer = "{{Issue URL}}";
+  strPostLogoutURL = "{{Your post logout redirect URL}}";
+  strScope = ['openid', 'email', 'profile'];
+  strResponseType = ['token','id_token'];
+  strResponseMode = 'fragment';
+  strPkce = false;
+  
+   
+    config = {
+        clientId: this.strClientID,
+        issuer: this.strIssuer,
+        redirectUri: this.strRedirectURL,
+        postLogoutRedirectUri:this.strRedirectURL,
+        responseMode: this.strResponseMode,
+        responseType: this.strResponseType,
+        scopes: this.strScope,
+    };
+
+    OktaSDKAuthClient = new OktaAuth(this.config);    
+}
 ```
 ```
 var strRedirectUrl = "{{Your redirect URL}}";

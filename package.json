@@ -31,7 +31,7 @@
     "@angular/router": "11.0.4",
     "@ng-bootstrap/ng-bootstrap": "6.0.0",
     "@okta/okta-auth-js": "^5.4.0",
-    "@okta/okta-signin-widget": "^5.9.4",
+    "@okta/okta-signin-widget": "^5.10.1",
     "bootstrap": "4.5.3",
     "core-js": "3.8.1",
     "crypto-js": "^4.1.1",

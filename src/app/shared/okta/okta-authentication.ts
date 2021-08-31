@@ -5,14 +5,19 @@ import { BehaviorSubject } from "rxjs";
 import OktaSignIn from '@okta/okta-signin-widget';
 import '@okta/okta-signin-widget/dist/css/okta-sign-in.min.css';
 
+var strRedirectUrl = "https://192.168.1.210:4200/";
+var strPostLogoutUrl = "https://192.168.1.210:4200/";
+var strClientID = "0oa18tefheexDDijM1d7";
+var strIssuer = "https://csm-apac.oktapreview.com/oauth2/default";
+var strBaseURL = "https://csm-apac.oktapreview.com/";
 
 @Injectable({
   providedIn: "root"
 })
 export class AuthService {
   private authClient = new OktaAuth({
-    issuer: "https://csm-apac.oktapreview.com/oauth2/default",
-    clientId: "0oa18tefheexDDijM1d7",
+    issuer: strIssuer,
+    clientId: strClientID,
   });
 
   public isAuthenticated = new BehaviorSubject<boolean>(false);
@@ -39,17 +44,17 @@ export class AuthService {
             
             //Uses the state token to perform MFA authentication using a newly created widget
             var oktaSignIn = new OktaSignIn({
-              clientId: '0oa18tefheexDDijM1d7',
-              baseUrl: 'https://csm-apac.oktapreview.com',
+              clientId: strClientID,
+              baseUrl: strBaseURL,
               language: 'ja',
-              redirectUri: 'https://192.168.1.210:4200/',
+              redirectUri: strRedirectUrl,
               colors: {
                   brand: '#00297A',
                 },
               stateToken: this.strstateToken,
-              postLogoutRedirectUri:'https://192.168.1.210:4200/',
+              postLogoutRedirectUri: strPostLogoutUrl,
               authParams: {
-                issuer: "https://csm-apac.oktapreview.com/oauth2/default",
+                issuer: strIssuer,
                 responseMode: 'fragment',
                 responseType: ['token','id_token'],
                 scopes: ['openid', 'email', 'profile'],
@@ -79,7 +84,7 @@ export class AuthService {
                 .then(function(user) {
                   // user has details about the user
                   console.log(JSON.stringify(user));
-                  window.location.replace("http://192.168.1.210:4200/");
+                  window.location.replace(strRedirectUrl);
                 })
                 .catch(function(err) {
                   // handle OAuthError or AuthSdkError (AuthSdkError will be thrown if app is in OAuthCallback state)
@@ -93,7 +98,7 @@ export class AuthService {
 
   OktaLogout(bar?: string){ 
     this.authClient.tokenManager.clear();
-    this.authClient.signOut({postLogoutRedirectUri : 'https://192.168.1.210:4200/',idToken: this.idToken});
+    this.authClient.signOut({postLogoutRedirectUri : strPostLogoutUrl,idToken: this.idToken});
     location.reload();
 }
             

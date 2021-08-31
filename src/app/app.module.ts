@@ -8,9 +8,6 @@ import { AppRoutingModule } from './app.routing';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
-
-import { ComponentsModule } from './components/components.module';
-//import { ExamplesModule } from './examples/examples.module';
 import { OktaSDKAuthService } from 'app/shared/okta/okta-auth-service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
@@ -30,23 +27,12 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field'; 
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
-
-//
-
-import { SdkLoginComponent } from './sdk-login/sdk-login.component';
-
-import { WidgetModalComponent } from './widget-modal/widget-modal.component';
-import { RegisterModalComponent } from './register-modal/register-modal.component';
-
 import { Router, Routes } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.component';
-
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ContentComponent } from './content/content.component';
-
-import { LandingComponent } from './examples/landing/landing.component';
 import { HomeComponent } from './home/home.component';
 import {A11yModule} from '@angular/cdk/a11y';
 import { EnContentComponent } from './en-content/en-content.component';
@@ -63,11 +49,7 @@ import { AutoFocusDirectiveDirectiveEN } from './shared/auto-focus-directive.dir
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    SdkLoginComponent,
-    WidgetModalComponent,
-    RegisterModalComponent,
     ContentComponent,
-    LandingComponent,
     HomeComponent,
     EnContentComponent,
     EnComponent,
@@ -83,8 +65,6 @@ import { AutoFocusDirectiveDirectiveEN } from './shared/auto-focus-directive.dir
     NgbModule,
     FormsModule,
     RouterModule,
-    ComponentsModule,
-    //ExamplesModule,
     AppRoutingModule,
     
     BrowserAnimationsModule,

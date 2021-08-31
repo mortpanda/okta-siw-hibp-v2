@@ -1,14 +1,7 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-//// This is needed to import from a path
-import { WidgetModalComponent } from 'app/widget-modal/widget-modal.component';
-import { RegisterModalComponent } from 'app/register-modal/register-modal.component';
-import { SdkLoginComponent } from 'app/sdk-login/sdk-login.component';
-
 import { ViewEncapsulation } from '@angular/core';
-
-import { ViewChild, AfterViewInit } from '@angular/core';
 import {OktaSDKAuthService} from 'app/shared/okta/okta-auth-service';
 import { Router } from '@angular/router';
 
@@ -76,94 +69,7 @@ export class NavbarComponent implements OnInit {
         else {
             return false;
         }
-    }
-
-    // //////////////////
-          // Login
-    // //////////////////
-        // openModal() {
-        //     const dialogConfig = new MatDialogConfig();
-            
-        //     this.sidebarClose();
-        
-        //     // 表示するdialogの設定
-        //     //dialogConfig.disableClose = true;
-        //     dialogConfig.id = "login-component";
-        //     dialogConfig.height = "700px";
-        //     dialogConfig.width = "450px";
-            
-        
-        //     const modalDialog = this._matdialog.open(LoginComponent, dialogConfig);
-        //   }
-      
-    // //////////////////
-          // Widget Login
-    // //////////////////
-    widgetModal() {
-        const WidgetDialogConfig = new MatDialogConfig();
-        this.sidebarClose();
-
-    
-        // 表示するdialogの設定
-        WidgetDialogConfig.disableClose = true;
-        WidgetDialogConfig.id = "widget-modal-component";
-        WidgetDialogConfig.height = "900px";
-        WidgetDialogConfig.width = "450px";
-        
-    
-        const modalDialog = this._matdialog.open(WidgetModalComponent, WidgetDialogConfig);
-      }
-  
-    // //////////////////
-           // Registeration
-    // //////////////////
-    registerModal() {
-        const RegisterDialogConfig = new MatDialogConfig();
-        this.sidebarClose();
-    
-        // 表示するdialogの設定
-        //RegisterDialogConfig.disableClose = true;
-        RegisterDialogConfig.id = "register-modal-component";
-        RegisterDialogConfig.height = "800px";
-        RegisterDialogConfig.width = "450px";
-        
-        
-    
-        const modalDialog = this._matdialog.open(RegisterModalComponent, RegisterDialogConfig);
-      }
-  
-    // //////////////////
-           // Login SDK
-    // //////////////////
-    LoginModal() {
-        const LoginDialogConfig = new MatDialogConfig();
-        this.sidebarClose();
-    
-        // 表示するdialogの設定
-        //dialogConfig.disableClose = true;
-        LoginDialogConfig.id = "sdk-login-component";
-        LoginDialogConfig.height = "680px";
-        LoginDialogConfig.width = "450px";  
-    
-        const modalDialog = this._matdialog.open(SdkLoginComponent, LoginDialogConfig);
-      }
-
-    // //////////////////
-           // Angular Widget
-    // //////////////////
-    // AngularWidgetModal() {
-    //     const AngularWidgetDialogConfig = new MatDialogConfig();
-    //     this.sidebarClose();
-    
-    //     // 表示するdialogの設定
-    //     AngularWidgetDialogConfig.disableClose = true;
-    //     AngularWidgetDialogConfig.id = "angular-modal-component";
-    //     AngularWidgetDialogConfig.height = "680px";
-    //     AngularWidgetDialogConfig.width = "450px";
-                    
-    //     const modalDialog = this._matdialog.open(AngularWidgetComponent, AngularWidgetDialogConfig);
-    //   }
-      
+    }    
 
     isDocumentation() {
       var titlee = this.location.prepareExternalUrl(this.location.path());

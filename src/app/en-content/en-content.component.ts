@@ -62,7 +62,7 @@ export class EnContentComponent implements OnInit {
                 .then(function (user) {
                   console.log(user);
                   console.log('Howdy ' + user.given_name + " " + user.family_name);
-                  document.getElementById('loggedinuser').innerHTML = "ようこそ " + user.given_name + " " + user.family_name + " さん";
+                  document.getElementById('loggedinuser').innerHTML = "Welcome " + user.given_name + " " + user.family_name;
                   this.Userfullname = user.given_name + " " + user.family_name;
                   console.log(this.Userfullname);
                 })

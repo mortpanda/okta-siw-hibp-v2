@@ -71,11 +71,15 @@ typescript                      4.1.6
 - Update the below file with the information from your org,
 
 `src/app/okta-widget.js`
+
 `src/app/shared/okta-auth-service.ts`
+
 `src/app/shared/okta-authenticationEN.ts`
+
 `src/app/shared/okta-authentication.ts`
 
-- Inside the JS file, the below section will need to be updated with your setting.
+
+- Inside the files, the below section will need to be updated with your setting.
 
 ```
 language: 'ja',

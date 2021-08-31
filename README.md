@@ -1,4 +1,4 @@
-![](/src/asset/img/Logo_Okta_Blue_RGB.png)
+![](src/asset/img/Logo_Okta_Blue_RGB.png)
 
 # Okta Custom Login with HIBP Checker version 2
 

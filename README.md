@@ -1,5 +1,3 @@
-![](src/asset/img/Logo_Okta_Blue_RGB.png)
-
 # Okta Custom Login with HIBP Checker version 2
 
 **Please note this is NOT an official Okta tool, and the Okta support team does NOT provide support for this.**

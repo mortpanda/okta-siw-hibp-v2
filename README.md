@@ -1,13 +1,13 @@
 # Okta Custom Login with HIBP Checker version 2
 
 **Please note this is NOT an official Okta tool, and the Okta support team does NOT provide support for this.**
-This is merely a personal projct.
+This is merely a personal projct, and Okta's support do not offer support for this tool.
 
 ## What does this tool do?
-This tool used [Okta](https://github.com/okta/okta-auth-js)'s Auth JS ADK for the login flow.
-Once the password has been entered, and the login button is clicked, entered password will be checked against [HIBP](https://haveibeenpwned.com/) prior to submitting the information to login.
+This tool used [Okta](https://github.com/okta/okta-auth-js)'s Auth JS SDK for the login flow.
+Once the password has been entered, and the login button is clicked, the entered password will be checked against [HIBP](https://haveibeenpwned.com/) prior to submitting the information to login.
 
-The entered password will be checked against [HIBP](https://haveibeenpwned.com/) using the API that has been made available.  
+The entered password will be checked against [HIBP](https://haveibeenpwned.com/) using the API that has been made available to the public.  
 More information on the [HIBP](https://haveibeenpwned.com/) API can be found here [https://haveibeenpwned.com/API/v2#PwnedPasswords](https://haveibeenpwned.com/API/v2#PwnedPasswords).
 
 ## Screenshots 

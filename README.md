@@ -1,4 +1,4 @@
-# Okta Signin Widget HIBP Checker version 2
+# Okta Custom Login with HIBP Checker version 2
 
 **Please note this is NOT an official Okta tool, and the Okta support team does NOT provide support for this.**
 This is merely a personal projct.

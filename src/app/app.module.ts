@@ -40,6 +40,11 @@ import { EnComponent } from './en/en.component';
 import {MatTabsModule} from '@angular/material/tabs'; 
 import { AutoFocusDirectiveDirective } from './shared/auto-focus-directive.directive';
 import { AutoFocusDirectiveDirectiveEN } from './shared/auto-focus-directive.directiveEN';
+import { ContentNotificationComponent } from './content-notification/content-notification.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar'; 
+import {MatSnackBar} from '@angular/material/snack-bar';
+import { EnContentNotificationComponent } from './en-content-notification/en-content-notification.component';
+
 
 
 
@@ -55,6 +60,10 @@ import { AutoFocusDirectiveDirectiveEN } from './shared/auto-focus-directive.dir
     EnComponent,
     AutoFocusDirectiveDirective,
     AutoFocusDirectiveDirectiveEN,
+    ContentNotificationComponent,
+    EnContentNotificationComponent,
+    
+    
     
     
     
@@ -91,6 +100,8 @@ import { AutoFocusDirectiveDirectiveEN } from './shared/auto-focus-directive.dir
     A11yModule,
     HttpClientModule,
     MatTabsModule,
+    MatSnackBarModule,
+    
     
 
   ],

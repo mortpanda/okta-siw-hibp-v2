@@ -7,12 +7,14 @@ import '@okta/okta-signin-widget/dist/css/okta-sign-in.min.css';
 
 
 
-//Github pages variables
+//Github upload
 var strRedirectUrl = "{{Redirect URL}}";
 var strPostLogoutUrl = "{{Post logout URL}}";
 var strClientID = "{{Client ID}}";
 var strIssuer = "{{Issuer URL}}";
 var strBaseURL = "{{Base URL}}";
+
+
 
 @Injectable({
   providedIn: "root"

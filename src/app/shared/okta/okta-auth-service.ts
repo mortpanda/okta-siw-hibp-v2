@@ -7,7 +7,7 @@ import { OktaAuth } from "@okta/okta-auth-js";
 export class OktaSDKAuthService {
   constructor(){ }
 
-  
+    
   //Configuration
   strRedirectURL = '{{Redirect URL}}';
   strClientID = '{{Client ID}}';
@@ -18,6 +18,7 @@ export class OktaSDKAuthService {
   strResponseMode = 'fragment';
   strPkce = false;
 
+  
    
     config = {
         clientId: this.strClientID,

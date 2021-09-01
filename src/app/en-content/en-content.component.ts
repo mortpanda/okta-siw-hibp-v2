@@ -7,9 +7,11 @@ import { OktaSDKAuthService } from 'app/shared/okta/okta-auth-service';
 //import { DOCUMENT } from '@angular/common';
 import CryptoJS from 'crypto-js';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
-//import { Observable, throwError } from 'rxjs';
-
-//declare const RemoveLoginWidget: any;
+//import { ObjectUnsubscribedError, Observable, throwError } from 'rxjs';
+import { EnContentNotificationComponent } from 'app/en-content-notification/en-content-notification.component';
+//import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatSnackBar } from '@angular/material/snack-bar';
+//import { BooleanLiteral } from "typescript";
 
 
 @Component({
@@ -27,12 +29,17 @@ export class EnContentComponent implements OnInit {
   private formSubmitAttempt: boolean;
   private returnUrl: string;
 
+  constructor(private fb: FormBuilder, private authService: AuthService, private oktaSDKAuth: OktaSDKAuthService, private http: HttpClient, private _snackBar: MatSnackBar) { }
+  durationInSeconds = 10;
 
-  constructor(private fb: FormBuilder, private authService: AuthService, private oktaSDKAuth: OktaSDKAuthService, private http: HttpClient) { }
-
+  openSnackBar() {
+    this._snackBar.openFromComponent(EnContentNotificationComponent, {
+      duration: this.durationInSeconds * 1000,
+    });
+  }
 
   async ngOnInit() {
-    //RemoveLoginWidget();
+    
     this.loginform = this.fb.group({
       username: ["", Validators.email],
       password: ["", Validators.required]
@@ -41,19 +48,15 @@ export class EnContentComponent implements OnInit {
     if (await this.authService.checkAuthenticated()) {
       await console.log("You are Logged in");
       var authService = new OktaAuth(this.oktaSDKAuth.config);
-      //console.log(this.oktaSDKAuth.config);
       authService.session.get()
         .then(function (session) {
           // logged in
-          //console.log(session);
-
           authService.token.getWithoutPrompt({
             responseType: 'id_token', // or array of types
             sessionToken: 'testSessionToken' // optional if the user has an existing Okta session
           })
             .then(function (res) {
               var tokens = res.tokens;
-              //console.log(tokens);
               // Do something with tokens, such as
               authService.tokenManager.setTokens(tokens);
               //console.log(tokens.accessToken.value);
@@ -77,9 +80,9 @@ export class EnContentComponent implements OnInit {
     }
   }
 
-
-
   async onSubmit() {
+
+    var strBreached: Boolean;
     var username = this.loginform.get("username").value;
     var password = this.loginform.get("password").value;
 
@@ -97,28 +100,26 @@ export class EnContentComponent implements OnInit {
     var strCompareText = (strPasswordHash.substring(5, 999));
     console.log(strQueryString);
     document.getElementById("console").innerHTML += "<font color=white>" + '&nbsp' + '<br>' + '&nbsp' + '&nbsp' + "  HIBP search string "
-      + "<font color=red>" + strQueryString + "<br>";
+    + "<font color=red>" + strQueryString + "<br>";
     document.getElementById("console").innerHTML += "<br> <br> <h1 style=" + "'padding: 15px'>" + "CHECKING HIBP.......";
 
     var strGetUrI = this.uriHibp + strQueryString
     this.http.get(strGetUrI, { responseType: 'text' })
-      // レスポンスはテキストとしてsubscribeに渡される
       .subscribe(text => {
         console.log(text)
         var strResponse = text;
         var strMatchedPW;
         var intBreached;
-        var strBreached: Boolean;
         var strResponseLine = strResponse.split("\n");
+
         const myDiv = document.getElementById("console");
         strBreached = false;
+        //Split the reponse into lines, and cycle through each line
         for (var i = 0; i < strResponseLine.length; i++) {
           var arrLines = strResponseLine[i].split(":");
           var strHIBPhas = arrLines[0].toUpperCase();
-          //console.log(strResponseLine[i]);
-
+          //Output to the console, the hash the integation showing the number of times a password has been breached
           if (strCompareText.toUpperCase() == strHIBPhas) {
-
             strMatchedPW = arrLines[0];
             intBreached = arrLines[1];
             document.getElementById("console").innerHTML += "<font color=red>" + '&nbsp' + '&nbsp' + strResponseLine[i].toUpperCase() + "<br>";
@@ -131,39 +132,41 @@ export class EnContentComponent implements OnInit {
         }
         console.log(strMatchedPW);
         console.log(intBreached);
-        console.log(strBreached);
-        if (strBreached == true) {
-          document.getElementById("console").innerHTML += "<h2>" + '&nbsp' + '&nbsp' + "<font color=white>" + "According to HIBP, the entered password has been found to be breached " + "<font color=red>" + intBreached + "<font color=white>" + " times." + "</h2>";
+        //Output to the console the resulst
+        switch (strBreached) {
+          case true:
+            // Exit if breach has been found using the hash, and do not allow login
+            document.getElementById("console").innerHTML += "<h2>" + '&nbsp' + '&nbsp' + "<font color=white>" + "According to HIBP, the entered password has been found to be breached " + "<font color=red>" + intBreached + "<font color=white>" + " times." + "</h2>";
+            this.openSnackBar();
+            myDiv.scrollTop = myDiv.scrollHeight;
+            myDiv.scrollTop = myDiv.scrollHeight;
+            break;
+          case false:
+            // If no breach as been identified, proceed with the login
+            document.getElementById("console").innerHTML += "<h2>" + '&nbsp' + '&nbsp' + "<font color=white>" + "HIBP has not flagged this password as a breached password for now" + "</h2>";
+            myDiv.scrollTop = myDiv.scrollHeight;
+            myDiv.scrollTop = myDiv.scrollHeight;
+            this.loginInvalid = false;
+            this.formSubmitAttempt = false;
+           
+            //if (this.loginform.valid) {
+            //try {
+
+            this.authService.login(username, password);
+            //} catch (err) {
+            //alert(this.authService.strstateToken)      
+            this.loginInvalid = true;
+            //}
+            //} else 
+            {
+              this.formSubmitAttempt = true;
+              //console.log("username", username);
+              //console.log("password", password);
+            }
         }
-        else {
-
-          document.getElementById("console").innerHTML += "<h2>" + '&nbsp' + '&nbsp' + "<font color=white>" + "HIBP has not flagged this password as a breached password for now" + "</h2>";
-        }
-        myDiv.scrollTop = myDiv.scrollHeight;
-        myDiv.scrollTop = myDiv.scrollHeight;
-
-
-        myDiv.scrollTop = myDiv.scrollHeight;
-        myDiv.scrollTop = myDiv.scrollHeight;
       });
-
-    this.loginInvalid = false;
-    this.formSubmitAttempt = false;
-    //if (this.loginform.valid) {
-    //try {
-
-    await this.authService.login(username, password);
-    //} catch (err) {
-    //alert(this.authService.strstateToken)      
-    this.loginInvalid = true;
-    //}
-    //} else 
-    {
-      this.formSubmitAttempt = true;
-      //console.log("username", username);
-      //console.log("password", password);
-    }
   }
+
   logout() {
     this.authService.OktaLogout();
   }

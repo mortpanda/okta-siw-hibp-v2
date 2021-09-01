@@ -6,18 +6,14 @@ import OktaSignIn from '@okta/okta-signin-widget';
 import '@okta/okta-signin-widget/dist/css/okta-sign-in.min.css';
 
 
-// var strRedirectUrl = "https://192.168.1.210:4200/en";
-// var strPostLogoutUrl = "https://192.168.1.210:4200/en";
-// var strClientID = "0oa18tefheexDDijM1d7";
-// var strIssuer = "https://csm-apac.oktapreview.com/oauth2/default";
-// var strBaseURL = "https://csm-apac.oktapreview.com/";
 
-//Github pages variables
-var strRedirectUrl = "https://mortpanda.github.io/okta-siw-hibp-v2/en";
-var strPostLogoutUrl = "https://mortpanda.github.io/okta-siw-hibp-v2/en";
-var strClientID = "0oa18tefheexDDijM1d7";
-var strIssuer = "https://csm-apac.oktapreview.com/oauth2/default";
-var strBaseURL = "https://csm-apac.oktapreview.com/";
+
+//Github upload
+var strRedirectUrl = "{{Redirect URL}}";
+var strPostLogoutUrl = "{{Post logout URL}}";
+var strClientID = "{{Client ID}}";
+var strIssuer = "{{Issuer URL}}";
+var strBaseURL = "{{Base URL}}";
 
 @Injectable({
   providedIn: "root"

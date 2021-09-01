@@ -10,9 +10,13 @@ Once the password has been entered, and the login button is clicked, the entered
 The entered password will be checked against [HIBP](https://haveibeenpwned.com/) using the API that has been made available to the public.  
 More information on the [HIBP](https://haveibeenpwned.com/) API can be found here [https://haveibeenpwned.com/API/v2#PwnedPasswords](https://haveibeenpwned.com/API/v2#PwnedPasswords).
 
+If the endered password has been found to be breached according to [HIBP](https://haveibeenpwned.com/), the user will not be permitted to login.  Only users using passwords not found on the [HIBP](https://haveibeenpwned.com/) website will be permitted to login.
+
 ## Screenshots 
 ![](Capture-1-eng.PNG)
+![](Capture-3-eng.PNG)
 ![](Capture-1-jpn.PNG)
+![](Capture-2-jpn.PNG)
 
 ## Pre-requisites for running this application
 - Nodejs setup with Angluar CLI

@@ -4,14 +4,10 @@ import { AuthService } from "app/shared/okta/okta-authentication";
 import { OktaAuth } from "@okta/okta-auth-js";
 import { ViewEncapsulation } from '@angular/core';
 import { OktaSDKAuthService } from 'app/shared/okta/okta-auth-service';
-//import { DOCUMENT } from '@angular/common';
 import CryptoJS from 'crypto-js';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
-//import { ObjectUnsubscribedError, Observable, throwError } from 'rxjs';
 import { ContentNotificationComponent } from 'app/content-notification/content-notification.component';
-//import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSnackBar } from '@angular/material/snack-bar';
-//import { BooleanLiteral } from "typescript";
 
 
 @Component({
